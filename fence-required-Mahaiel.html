@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Print and Copy Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Remaining Fence Majardah Line </h2>
+
+    
+<div class="buttons">
+    <button class="button" onclick="printTable()">Print</button>
+    <button class="button" onclick="copyTable()">Copy</button>
+</div>
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Serial</th>
+            <th>Phase</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Phase 1</td><td>V.S KP 110+539</td></tr>
+        <tr><td>2</td><td>Phase 1</td><td>DS KP 109+346</td></tr>
+        <tr><td>3</td><td>Phase 1</td><td>VS KP 109+147</td></tr>
+        <tr><td>4</td><td>Phase 1</td><td>DS KP 108+922</td></tr>
+        <tr><td>5</td><td>Phase 1</td><td>VS KP 107+944</td></tr>
+        <tr><td>6</td><td>Phase 1</td><td>DS KP 107+874</td></tr>
+        <tr><td>7</td><td>Phase 1</td><td>DS KP 106+633</td></tr>
+        <tr><td>8</td><td>Phase 1</td><td>DS KP 104+094</td></tr>
+        <tr><td>9</td><td>Phase 1</td><td>DS kp 103+643</td></tr>
+        <tr><td>10</td><td>Phase 1</td><td>VS KP 103+449</td></tr>
+        <tr><td>11</td><td>Phase 1</td><td>DS KP 100+490</td></tr>
+        <tr><td>12</td><td>Phase 1</td><td>DS KP 99+957</td></tr>
+        <tr><td>13</td><td>Phase 1</td><td>VS KP 99+448</td></tr>
+        <tr><td>14</td><td>Phase 1</td><td>DS KP 98+294</td></tr>
+        <tr><td>15</td><td>Phase 3</td><td>VS KP 35+736</td></tr>
+        <tr><td>16</td><td>Phase 3</td><td>VS KP 32+845</td></tr>
+        <tr><td>17</td><td>Phase 3</td><td>DS KP 30+925</td></tr>
+        <tr><td>18</td><td>Phase 3</td><td>VS KP 30+240</td></tr>
+        <tr><td>19</td><td>Phase 3</td><td>DS KP 30+363</td></tr>
+        <tr><td>20</td><td>Phase 3</td><td>DS KP 27+705</td></tr>
+        <tr><td>21</td><td>Phase 3</td><td>VS KP 27+614</td></tr>
+        <tr><td>22</td><td>Phase 3</td><td>VS KP 27+333</td></tr>
+        <tr><td>23</td><td>Phase 3</td><td>VS KP 21+758</td></tr>
+        <tr><td>24</td><td>Phase 3</td><td>W.O KP 12+972</td></tr>
+        <tr><td>25</td><td>Phase 3</td><td>D.S KP 7+777</td></tr>
+        <tr><td>26</td><td>Phase 3</td><td>V.S KP 5+196</td></tr>
+    </tbody>
+</table>
+
+<script>
+    function printTable() {
+        var printContents = document.getElementById('dataTable').outerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+
+    function copyTable() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById('dataTable'));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        alert('Table copied to clipboard');
+    }
+</script>
+
+</body>
+</html>
