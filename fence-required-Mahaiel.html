@@ -36,6 +36,9 @@
             margin: 0 10px;
             cursor: pointer;
             font-size: 16px;
+            background-color: #049425;
+            color: aliceblue;
+           border-radius: 1vh;
         }
     </style>
 </head>
@@ -45,7 +48,11 @@
 
     <h6 style="color: green;">Starting Date :10-8-2024   </h2>
         <h6 style="color: green;">Total = 70 pcs  </h2>
-    <p id="currentDate"></p>
+            <p id="currentDate"></p>
+            <div class="button-container">
+                <button onclick="printTable()">Print Table</button>
+                <button onclick="copyTable()">Copy Table</button>
+            </div>
 
     <table>
         <thead>
@@ -117,7 +124,7 @@
             <tr><td>60</td><td>VS 189+581</td></tr>
             <tr><td>61</td><td>DS 190+827</td></tr>
             <tr><td>62</td><td>DS 197+738</td></tr>
-            <tr><td>63</td><td>VS 198+317</td></tr>
+            <tr><td>63</td><td>VS 1981317</td></tr>
             <tr><td>64</td><td>DS 181+992</td></tr>
             <tr><td>65</td><td>Wash Out 181+250</td></tr>
             <tr><td>66</td><td>DS 179+147</td></tr>
@@ -128,10 +135,6 @@
         </tbody>
     </table>
 
-    <div class="button-container">
-        <button onclick="printTable()">Print Table</button>
-        <button onclick="copyTable()">Copy Table</button>
-    </div>
 
     <script>
         // Set current date
